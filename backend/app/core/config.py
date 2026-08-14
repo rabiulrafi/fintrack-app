@@ -40,6 +40,10 @@ class Settings(BaseSettings):
                 v = v.replace("postgres://", "postgresql+asyncpg://", 1)
             elif v.startswith("postgresql://") and "+asyncpg" not in v:
                 v = v.replace("postgresql://", "postgresql+asyncpg://", 1)
+            
+            # asyncpg does not support sslmode=require in the connection string
+            if "?sslmode=" in v:
+                v = v.split("?sslmode=")[0]
         return v
 
     @field_validator("DATABASE_URL_SYNC", mode="before")
