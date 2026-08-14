@@ -1,12 +1,11 @@
 services:
   # ---------------------------------------------------------------------------
-  # 1. FastAPI Backend Web Service (Free Tier)
+  # 1. FastAPI Backend Web Service
   # ---------------------------------------------------------------------------
   - type: web
     name: fintrack-backend
     env: python
     rootDir: backend
-    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
@@ -29,13 +28,13 @@ services:
         value: Demo@12345
 
   # ---------------------------------------------------------------------------
-  # 2. React + Vite Frontend Static Site (Free Tier)
+  # 2. React + Vite Frontend Static Site
+  # Static sites on Render do NOT use plan field
   # ---------------------------------------------------------------------------
   - type: web
     name: fintrack-frontend
     env: static
     rootDir: frontend
-    plan: free
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     routes:
@@ -52,10 +51,9 @@ services:
         value: FinTrack
 
 # -----------------------------------------------------------------------------
-# 3. PostgreSQL Managed Database (Free Tier)
+# 3. PostgreSQL Managed Database
 # -----------------------------------------------------------------------------
 databases:
   - name: fintrack-db
     databaseName: expense_tracker
     user: app_user
-    plan: free
