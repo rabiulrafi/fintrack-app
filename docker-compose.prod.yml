@@ -1,0 +1,40 @@
+# Production override — use with:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+
+services:
+  postgres:
+    restart: always
+    ports: []          # Do NOT expose DB port in production
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+  backend:
+    restart: always
+    volumes:
+      - backend_exports:/app/exports  # only mount exports, not full source
+    environment:
+      APP_ENV: production
+      DEBUG: "false"
+    command: >
+      sh -c "alembic upgrade head &&
+             python -m app.utils.seed &&
+             uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4"
+    ports: []   # Not exposed directly — Nginx handles it
+
+  frontend:
+    restart: always
+
+  nginx:
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.prod.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro      # Mount TLS certs
+
+volumes:
+  postgres_data:
+  backend_exports:

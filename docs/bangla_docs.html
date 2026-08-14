@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>FinTrack - পূর্ণাঙ্গ বাংলা ডকুমেন্টেশন ও সিস্টেম আর্কিটেকচার</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Hind Siliguri', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #1e293b;
+      background-color: #ffffff;
+    }
+    .header-banner {
+      background: linear-gradient(135deg, #14532d 0%, #15803d 100%);
+      color: white;
+      padding: 24px 28px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+    .header-banner h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: -0.3px;
+    }
+    .header-banner p {
+      font-size: 14px;
+      opacity: 0.92;
+      font-weight: 400;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #166534;
+      border-bottom: 2px solid #bbf7d0;
+      padding-bottom: 6px;
+      margin-top: 22px;
+      margin-bottom: 12px;
+    }
+    h3 {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #0f172a;
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+    p {
+      margin-bottom: 10px;
+      text-align: justify;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 12px;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #16a34a;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 12px 0;
+    }
+    .card-title {
+      font-weight: 600;
+      color: #15803d;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 12.5px;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0fdf4;
+      color: #166534;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    code {
+      font-family: 'Consolas', 'Courier New', monospace;
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11.5px;
+      color: #0f172a;
+      border: 1px solid #e2e8f0;
+    }
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      margin: 10px 0;
+      overflow-x: auto;
+    }
+    .diagram-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      padding: 14px;
+      border-radius: 8px;
+      font-family: 'Consolas', monospace;
+      font-size: 11px;
+      line-height: 1.4;
+      color: #334155;
+      margin: 12px 0;
+      white-space: pre;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Banner -->
+  <div class="header-banner">
+    <h1>FinTrack (ফিনট্র্যাক)</h1>
+    <p>প্রডাকশন-রেডি ব্যক্তিগত আয় ও ব্যয় ট্র্যাকার — পূর্ণাঙ্গ বাংলা ডকুমেন্টেশন ও আর্কিটেকচার গাইড</p>
+    <div class="badge">Version 1.0.0 • Production Ready • Currency: ৳ BDT</div>
+  </div>
+
+  <!-- ১. ভূমিকা -->
+  <h2>১. ভূমিকা ও সিস্টেম পরিচিতি (Introduction)</h2>
+  <p>
+    <strong>FinTrack</strong> হলো একটি উচ্চ ক্ষমতাসম্পন্ন, আধুনিক এবং নিরাপদ পার্সোনাল ফাইন্যান্স ম্যানেজমেন্ট প্ল্যাটফর্ম। ব্যবহারকারীরা যাতে তাদের দৈনন্দিন সমস্ত নগদ ও ব্যাংক অ্যাকাউন্টের আয়-ব্যয় নিখুঁতভাবে হিসাব রাখতে পারেন, বাজেট পরিকল্পনা করতে পারেন এবং প্রয়োজনীয় রিপোর্ট তৈরি করতে পারেন—সেই উদ্দেশ্যে এটি তৈরি করা হয়েছে।
+  </p>
+  <p>
+    সম্পূর্ণ অ্যাপ্লিকেশনটি আন্তর্জাতিক কোডিং স্ট্যান্ডার্ড এবং ৩-স্তর বিশিষ্ট এন্টারপ্রাইজ আর্কিটেকচার অনুসরণ করে নির্মিত।
+  </p>
+
+  <!-- ২. টেকনোলজি স্ট্যাক -->
+  <h2>২. ব্যবহৃত প্রযুক্তি ও ফ্রেমওয়ার্ক (Technology Stack)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 22%;">স্তর (Layer)</th>
+        <th style="width: 38%;">প্রযুক্তি (Technology)</th>
+        <th style="width: 40%;">মূল ভূমিকা (Role)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Frontend</strong></td>
+        <td>React 18, TypeScript, Tailwind CSS</td>
+        <td>দ্রুতগতির রেসপনসিভ ইউজার ইন্টারফেস ও ইন্টারেক্টিভ ডিজাইন।</td>
+      </tr>
+      <tr>
+        <td><strong>State & Query</strong></td>
+        <td>Zustand, TanStack Query (React Query)</td>
+        <td>লোকাল স্টেট ম্যানেজমেন্ট এবং সার্ভার ক্যাশিং ও রিফ্রেশ।</td>
+      </tr>
+      <tr>
+        <td><strong>Form & Validation</strong></td>
+        <td>React Hook Form + Zod</td>
+        <td>কঠোর ক্লায়েন্ট-সাইড টাইপ-সেফ ফর্ম ভ্যালিডেশন।</td>
+      </tr>
+      <tr>
+        <td><strong>Visual Charts</strong></td>
+        <td>Recharts</td>
+        <td>ইন্টারেক্টিভ বার চার্ট ও ক্যাটাগরি পাই-চার্ট।</td>
+      </tr>
+      <tr>
+        <td><strong>Backend API</strong></td>
+        <td>FastAPI, Python 3.12, Pydantic V2</td>
+        <td>হাই-পারফরম্যান্স অ্যাসিনক্রোনাস REST API।</td>
+      </tr>
+      <tr>
+        <td><strong>Database & ORM</strong></td>
+        <td>PostgreSQL 16, SQLAlchemy 2.0</td>
+        <td>নিখুঁত হিসাবের জন্য <code>Numeric(15,2)</code> ডেসিমাল এবং UUID।</td>
+      </tr>
+      <tr>
+        <td><strong>Migrations</strong></td>
+        <td>Alembic</td>
+        <td>ডাটাবেজ স্কিমার স্বয়ংক্রিয় ভার্সন নিয়ন্ত্রণ।</td>
+      </tr>
+      <tr>
+        <td><strong>Reverse Proxy</strong></td>
+        <td>Nginx</td>
+        <td>পোর্ট ৮০ তে একক গেটওয়ে, সিকিউরিটি হেডার ও SPA রাউটিং।</td>
+      </tr>
+      <tr>
+        <td><strong>Containerization</strong></td>
+        <td>Docker & Docker Compose</td>
+        <td>এক ক্লিকে ফুল-স্ট্যাক প্রডাকশন ডিপ্লয়মেন্ট।</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ৩. আর্কিটেকচার ও ডেটা প্রবাহ -->
+  <h2>৩. সিস্টেম কীভাবে কাজ করে? (Architecture & Data Flow)</h2>
+  <div class="diagram-box">
+                               [ ব্যবহারকারীর ব্রাউজার ]
+                                          │
+                                          ▼ (Port 80)
+                              ┌───────────────────────┐
+                              │      NGINX PROXY      │
+                              │    (রিভার্স প্রক্সি)   │
+                              └───────────┬───────────┘
+                                          │
+                        ┌─────────────────┴─────────────────┐
+                        │                                   │
+                 /api/v1/* (API রিকোয়েস্ট)           /* (UI পেজ ও অ্যাসেট)
+                        │                                   │
+                        ▼ (Port 8000)                       ▼ (Port 80)
+               ┌─────────────────┐                 ┌─────────────────┐
+               │ FastAPI Backend │                 │  React Frontend │
+               │  (বিজনেস লজিক)  │                 │   (ইউজার UI)    │
+               └────────┬────────┘                 └─────────────────┘
+                        │
+                        ▼
+               ┌─────────────────┐
+               │   PostgreSQL    │
+               │    ডাটাবেজ      │
+               └─────────────────┘
+  </div>
+
+  <div class="card">
+    <div class="card-title">৩-স্তর ব্যাকএন্ড আর্কিটেকচার (Clean 3-Tier Pattern):</div>
+    <ul>
+      <li><strong>Router Layer:</strong> রিকোয়েস্ট গ্রহণ ও অথেনটিকেশন চেক করে।</li>
+      <li><strong>Service Layer:</strong> ব্যালেন্স সমন্বয়, হিসাব-নিকাশ ও ব্যবসায়িক নিয়ম প্রয়োগ করে।</li>
+      <li><strong>Repository Layer:</strong> ডাটাবেজের সাথে সরাসরি কুয়েরি সম্পাদন করে।</li>
+    </ul>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ৪. মূল ফিচারসমূহ -->
+  <h2>৪. অ্যাপ্লিকেশনের মূল ফিচারসমূহ (Core Features)</h2>
+
+  <h3>১. রেজিস্ট্রেশন ও নিরাপদ লগইন (Authentication)</h3>
+  <ul>
+    <li>ব্যবহারকারীরা নাম, ইমেইল ও পাসওয়ার্ড দিয়ে সহজে অ্যাকাউন্ট তৈরি করতে পারেন।</li>
+    <li>পাসওয়ার্ডগুলো নিরাপদ <code>bcrypt</code> অ্যালগরিদমে হ্যাশ করে ডাটাবেজে সংরক্ষণ করা হয়।</li>
+    <li>লগইনের পর <strong>JWT Access Token</strong> (৩০ মিনিট) এবং <strong>Refresh Token</strong> (৭ দিন) প্রদান করা হয়।</li>
+    <li>টেস্টিংয়ের সুবিধার্থে <code>demo@example.com</code> / <code>Demo@12345</code> এক ক্লিকেই অটো-ফিল করে লগইন করা যায়।</li>
+  </ul>
+
+  <h3>২. আর্থিক ড্যাশবোর্ড ও বিশ্লেষণ (Dashboard & Analytics)</h3>
+  <ul>
+    <li><strong>৬টি সারসংক্ষেপ কেপিআই কার্ড:</strong> মোট ব্যালেন্স, সর্বমোট আয়, সর্বমোট ব্যয়, নিট সঞ্চয়, চলতি মাসের আয় এবং চলতি মাসের ব্যয়।</li>
+    <li><strong>বাৎসরিক আয় বনাম ব্যয় চার্ট:</strong> প্রতি মাসের আয়ের সাথে ব্যয়ের তুলনামূলক বার চার্ট।</li>
+    <li><strong>ক্যাটাগরি ভিত্তিক খরচের ডোনাট চার্ট:</strong> কোন খাতে কত টাকা বা কত শতাংশ খরচ হচ্ছে তার ভিজ্যুয়াল পাই চার্ট।</li>
+    <li><strong>রিসেন্ট ট্রানজেকশন তালিকা:</strong> সর্বশেষ সম্পন্ন হওয়া লেনদেনগুলোর তাৎক্ষণিক ফিড।</li>
+  </ul>
+
+  <h3>৩. একাধিক অ্যাকাউন্ট ও ফান্ড ট্রান্সফার (Accounts & Transfers)</h3>
+  <ul>
+    <li>ক্যাশ (Cash), ব্যাংক (Bank), ক্রেডিট কার্ড (Credit Card), সেভিংস (Savings) বা মোবাইল ওয়ালেট (bKash/Nagad) যুক্ত করার সুবিধা।</li>
+    <li><strong>ফান্ড ট্রান্সফার:</strong> এক অ্যাকাউন্ট থেকে অন্য অ্যাকাউন্টে টাকা স্থানান্তর (যেমন: ব্যাংক থেকে ক্যাশ উত্তোলন)। এটি নতুন কোনো আয় বা ব্যয় না বাড়িয়ে কেবল দুটি অ্যাকাউন্টের ব্যালেন্স আপডেট করে।</li>
+  </ul>
+
+  <h3>৪. আয়-ব্যয় লেনদেন ও ক্যাটাগরি (Transactions & Categories)</h3>
+  <ul>
+    <li><strong>লেনদেন এন্ট্রি:</strong> আয় বা ব্যয় সিলেক্ট করে টাকার পরিমাণ (৳ BDT), অ্যাকাউন্ট, ক্যাটাগরি ও তারিখ সহ এন্ট্রি।</li>
+    <li><strong>স্বয়ংক্রিয় ব্যালেন্স আপডেট:</strong> ট্রানজেকশন তৈরির সাথে সাথে অ্যাকাউন্টের ব্যালেন্স আপডেট হয়। কোনো লেনদেন এডিট বা ডিলিট করলে আগের হিসাব স্বয়ংক্রিয়ভাবে রিভার্স হয়ে সঠিক ব্যালেন্স বসে।</li>
+    <li><strong>কাস্টম ক্যাটাগরি:</strong> প্রতিটি ক্যাটাগরির জন্য পছন্দসই ইমোজি আইকন (🍔, 🚗, 💼, 🏠) এবং কালার সিলেক্ট করার ব্যবস্থা।</li>
+  </ul>
+
+  <h3>৫. বাজেট ব্যবস্থাপনা ও সতর্কবার্তা (Budgets & Over-Budget Alerts)</h3>
+  <ul>
+    <li>নির্দিষ্ট মাসের জন্য ক্যাটাগরি ভিত্তিক খরচের সর্বোচ্চ সীমা (Budget Target) নির্ধারণ।</li>
+    <li><strong>স্মার্ট প্রগ্রেস বার ও এলার্ট:</strong>
+      <ul>
+        <li><strong>সবুজ (On Track):</strong> খরচের পরিমাণ ৮০% এর নিচে থাকলে।</li>
+        <li><strong>হলুদ (Near Limit):</strong> খরচ ৮০% অতিক্রম করলে সতর্কবার্তা।</li>
+        <li><strong>লাল (Over Budget):</strong> বাজেট ১০০% অতিক্রম করলে ওভার-বাজেট এলার্ট।</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>৬. পূর্ণাঙ্গ রিপোর্ট ও এক্সপোর্ট সুবিধা (Reports & Data Export)</h3>
+  <ul>
+    <li>নির্দিষ্ট তারিখ সীমার (Date Range) আর্থিক রিপোর্ট ফিল্টার করার সুবিধা।</li>
+    <li><strong>৩টি ফরম্যাটে ডাউনলোড:</strong>
+      <ul>
+        <li><strong>CSV ফাইল:</strong> যেকোনো স্প্রেডশিটে ব্যবহারের জন্য।</li>
+        <li><strong>Excel (.xlsx):</strong> কালার হেডার ও গ্রিড সহ মাইক্রোসফট এক্সেল ফরম্যাট।</li>
+        <li><strong>PDF রিপোর্ট:</strong> প্রিন্ট করার উপযোগী পেশাদার রিপোর্ট।</li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- ৫. আর্থিক বিশুদ্ধতা ও নিরাপত্তা -->
+  <h2>৫. আর্থিক বিশুদ্ধতা ও নিরাপত্তা নীতি (Financial Integrity & Security)</h2>
+  <div class="card">
+    <ul>
+      <li><strong>নো ফ্লোটিং-পয়েন্ট এরর:</strong> আর্থিক গণনায় কখনো <code>float</code> ব্যবহার করা হয় না। ডাটাবেজে সর্বদা <code>Numeric(15,2)</code> এবং ব্যাকএন্ডে <code>Decimal</code> ব্যবহার করা হয়।</li>
+      <li><strong>IDOR প্রটেকশন:</strong> এক ব্যবহারকারী কখনো অন্য কোনো ব্যবহারকারীর অ্যাকাউন্ট, ক্যাটাগরি বা লেনদেনে অনুপ্রবেশ করতে পারে না।</li>
+      <li><strong>এনগিনেক্স সিকিউরিটি হেডার:</strong> <code>X-Frame-Options</code>, <code>X-Content-Type-Options</code>, <code>X-XSS-Protection</code> এবং Gzip কম্প্রেশন সক্রিয়।</li>
+    </ul>
+  </div>
+
+  <!-- ৬. কীভাবে চালাতে হবে -->
+  <h2>৬. অ্যাপ্লিকেশন চালানোর নির্দেশিকা (How to Run)</h2>
+  <p>ডকার দিয়ে সম্পূর্ণ অ্যাপ্লিকেশনটি চালু করতে টার্মিনালে নিচের কমান্ডটি রান করুন:</p>
+  <pre>docker compose up -d --build</pre>
+  
+  <p>চালু হওয়ার পর যেকোনো ব্রাউজার থেকে নিচের ইউআরএলগুলোতে প্রবেশ করুন:</p>
+  <ul>
+    <li><strong>ওয়েব অ্যাপ্লিকেশন:</strong> <code>http://localhost</code></li>
+    <li><strong>সোয়্যাগার API ডকুমেন্টেশন:</strong> <code>http://localhost/docs</code></li>
+    <li><strong>ডেমো লগইন তথ্য:</strong> ইমেইল: <code>demo@example.com</code> | পাসওয়ার্ড: <code>Demo@12345</code></li>
+  </ul>
+
+  <div class="footer-note">
+    © 2026 FinTrack Engineering Team • Designed with React, FastAPI, PostgreSQL & Nginx
+  </div>
+
+</body>
+</html>
